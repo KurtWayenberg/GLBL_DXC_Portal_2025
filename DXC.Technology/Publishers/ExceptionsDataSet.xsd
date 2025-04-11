@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ExceptionsDataSet" targetNamespace="http://tempuri.org/ExceptionsDataSet.xsd" xmlns:mstns="http://tempuri.org/ExceptionsDataSet.xsd" xmlns="http://tempuri.org/ExceptionsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ExceptionsDataSet" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_UserDSName="ExceptionsDataSet" msprop:Generator_DataSetName="ExceptionsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Exceptions" msprop:Generator_UserTableName="Exceptions" msprop:Generator_RowDeletedName="ExceptionsRowDeleted" msprop:Generator_RowChangedName="ExceptionsRowChanged" msprop:Generator_RowClassName="ExceptionsRow" msprop:Generator_RowChangingName="ExceptionsRowChanging" msprop:Generator_RowEvArgName="ExceptionsRowChangeEvent" msprop:Generator_RowEvHandlerName="ExceptionsRowChangeEventHandler" msprop:Generator_TableClassName="ExceptionsDataTable" msprop:Generator_TableVarName="tableExceptions" msprop:Generator_RowDeletingName="ExceptionsRowDeleting" msprop:Generator_TablePropName="Exceptions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ExceptionType" msprop:Generator_UserColumnName="ExceptionType" msprop:Generator_ColumnVarNameInTable="columnExceptionType" msprop:Generator_ColumnPropNameInRow="ExceptionType" msprop:Generator_ColumnPropNameInTable="ExceptionTypeColumn" type="xs:string" />
+              <xs:element name="CreationDateTime" msprop:Generator_UserColumnName="CreationDateTime" msprop:Generator_ColumnVarNameInTable="columnCreationDateTime" msprop:Generator_ColumnPropNameInRow="CreationDateTime" msprop:Generator_ColumnPropNameInTable="CreationDateTimeColumn" type="xs:dateTime" />
+              <xs:element name="MachineName" msprop:Generator_UserColumnName="MachineName" msprop:Generator_ColumnVarNameInTable="columnMachineName" msprop:Generator_ColumnPropNameInRow="MachineName" msprop:Generator_ColumnPropNameInTable="MachineNameColumn" type="xs:string" />
+              <xs:element name="ExceptionFullName" msprop:Generator_UserColumnName="ExceptionFullName" msprop:Generator_ColumnVarNameInTable="columnExceptionFullName" msprop:Generator_ColumnPropNameInRow="ExceptionFullName" msprop:Generator_ColumnPropNameInTable="ExceptionFullNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ExceptionNumber" msprop:Generator_UserColumnName="ExceptionNumber" msprop:Generator_ColumnVarNameInTable="columnExceptionNumber" msprop:Generator_ColumnPropNameInRow="ExceptionNumber" msprop:Generator_ColumnPropNameInTable="ExceptionNumberColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="SeverityLevel" msprop:Generator_UserColumnName="SeverityLevel" msprop:Generator_ColumnVarNameInTable="columnSeverityLevel" msprop:Generator_ColumnPropNameInRow="SeverityLevel" msprop:Generator_ColumnPropNameInTable="SeverityLevelColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TimeStamp" msprop:Generator_UserColumnName="TimeStamp" msprop:Generator_ColumnVarNameInTable="columnTimeStamp" msprop:Generator_ColumnPropNameInRow="TimeStamp" msprop:Generator_ColumnPropNameInTable="TimeStampColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AppDomainName" msprop:Generator_UserColumnName="AppDomainName" msprop:Generator_ColumnVarNameInTable="columnAppDomainName" msprop:Generator_ColumnPropNameInRow="AppDomainName" msprop:Generator_ColumnPropNameInTable="AppDomainNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ThreadIdentityName" msprop:Generator_UserColumnName="ThreadIdentityName" msprop:Generator_ColumnVarNameInTable="columnThreadIdentityName" msprop:Generator_ColumnPropNameInRow="ThreadIdentityName" msprop:Generator_ColumnPropNameInTable="ThreadIdentityNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="WindowsIdentityName" msprop:Generator_UserColumnName="WindowsIdentityName" msprop:Generator_ColumnVarNameInTable="columnWindowsIdentityName" msprop:Generator_ColumnPropNameInRow="WindowsIdentityName" msprop:Generator_ColumnPropNameInTable="WindowsIdentityNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="HelpLink" msprop:Generator_UserColumnName="HelpLink" msprop:Generator_ColumnVarNameInTable="columnHelpLink" msprop:Generator_ColumnPropNameInRow="HelpLink" msprop:Generator_ColumnPropNameInTable="HelpLinkColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="StackTrace" msprop:Generator_UserColumnName="StackTrace" msprop:Generator_ColumnVarNameInTable="columnStackTrace" msprop:Generator_ColumnPropNameInRow="StackTrace" msprop:Generator_ColumnPropNameInTable="StackTraceColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RawExceptionPatternString" msprop:Generator_UserColumnName="RawExceptionPatternString" msprop:Generator_ColumnVarNameInTable="columnRawExceptionPatternString" msprop:Generator_ColumnPropNameInRow="RawExceptionPatternString" msprop:Generator_ColumnPropNameInTable="RawExceptionPatternStringColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RawExceptionParmsTSV" msprop:Generator_UserColumnName="RawExceptionParmsTSV" msprop:Generator_ColumnVarNameInTable="columnRawExceptionParmsTSV" msprop:Generator_ColumnPropNameInRow="RawExceptionParmsTSV" msprop:Generator_ColumnPropNameInTable="RawExceptionParmsTSVColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ExceptionMessage" msprop:Generator_UserColumnName="ExceptionMessage" msprop:Generator_ColumnVarNameInTable="columnExceptionMessage" msprop:Generator_ColumnPropNameInRow="ExceptionMessage" msprop:Generator_ColumnPropNameInTable="ExceptionMessageColumn" type="xs:string" />
+              <xs:element name="ParentExceptionType" msprop:Generator_UserColumnName="ParentExceptionType" msprop:Generator_ColumnVarNameInTable="columnParentExceptionType" msprop:Generator_ColumnPropNameInRow="ParentExceptionType" msprop:Generator_ColumnPropNameInTable="ParentExceptionTypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ParentCreationDateTime" msprop:Generator_UserColumnName="ParentCreationDateTime" msprop:Generator_ColumnVarNameInTable="columnParentCreationDateTime" msprop:Generator_ColumnPropNameInRow="ParentCreationDateTime" msprop:Generator_ColumnPropNameInTable="ParentCreationDateTimeColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ParentMachineName" msprop:Generator_UserColumnName="ParentMachineName" msprop:Generator_ColumnVarNameInTable="columnParentMachineName" msprop:Generator_ColumnPropNameInRow="ParentMachineName" msprop:Generator_ColumnPropNameInTable="ParentMachineNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ParentExceptionMessage" msdata:Caption="ExceptionMessage" msprop:Generator_UserColumnName="ParentExceptionMessage" msprop:Generator_ColumnPropNameInRow="ParentExceptionMessage" msprop:Generator_ColumnVarNameInTable="columnParentExceptionMessage" msprop:Generator_ColumnPropNameInTable="ParentExceptionMessageColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ReferenceGUID" msprop:Generator_UserColumnName="ReferenceGUID" msprop:Generator_ColumnVarNameInTable="columnReferenceGUID" msprop:Generator_ColumnPropNameInRow="ReferenceGUID" msprop:Generator_ColumnPropNameInTable="ReferenceGUIDColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SeverityLevelEnum" msprop:Generator_UserTableName="SeverityLevelEnum" msprop:Generator_RowDeletedName="SeverityLevelEnumRowDeleted" msprop:Generator_RowChangedName="SeverityLevelEnumRowChanged" msprop:Generator_RowClassName="SeverityLevelEnumRow" msprop:Generator_RowChangingName="SeverityLevelEnumRowChanging" msprop:Generator_RowEvArgName="SeverityLevelEnumRowChangeEvent" msprop:Generator_RowEvHandlerName="SeverityLevelEnumRowChangeEventHandler" msprop:Generator_TableClassName="SeverityLevelEnumDataTable" msprop:Generator_TableVarName="tableSeverityLevelEnum" msprop:Generator_RowDeletingName="SeverityLevelEnumRowDeleting" msprop:Generator_TablePropName="SeverityLevelEnum">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeverityLevel" msprop:Generator_UserColumnName="SeverityLevel" msprop:Generator_ColumnVarNameInTable="columnSeverityLevel" msprop:Generator_ColumnPropNameInRow="SeverityLevel" msprop:Generator_ColumnPropNameInTable="SeverityLevelColumn" type="xs:string" />
+              <xs:element name="Hash" msprop:Generator_UserColumnName="Hash" msprop:Generator_ColumnVarNameInTable="columnHash" msprop:Generator_ColumnPropNameInRow="Hash" msprop:Generator_ColumnPropNameInTable="HashColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Exceptions" />
+      <xs:field xpath="mstns:ExceptionType" />
+      <xs:field xpath="mstns:CreationDateTime" />
+      <xs:field xpath="mstns:MachineName" />
+      <xs:field xpath="mstns:ExceptionMessage" />
+    </xs:unique>
+    <xs:unique name="ExceptionDataSetKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SeverityLevelEnum" />
+      <xs:field xpath="mstns:SeverityLevel" />
+    </xs:unique>
+    <xs:keyref name="FK_Exceptions_Exceptions" refer="Constraint1" msprop:rel_Generator_UserRelationName="FK_Exceptions_Exceptions" msprop:rel_Generator_RelationVarName="relationFK_Exceptions_Exceptions" msprop:rel_Generator_UserChildTable="Exceptions" msprop:rel_Generator_UserParentTable="Exceptions" msprop:rel_Generator_ParentPropName="ExceptionsRowParent" msprop:rel_Generator_ChildPropName="GetExceptionsRows">
+      <xs:selector xpath=".//mstns:Exceptions" />
+      <xs:field xpath="mstns:ParentExceptionType" />
+      <xs:field xpath="mstns:ParentCreationDateTime" />
+      <xs:field xpath="mstns:ParentMachineName" />
+      <xs:field xpath="mstns:ParentExceptionMessage" />
+    </xs:keyref>
+    <xs:keyref name="SeverityLevelEnumException" refer="ExceptionDataSetKey1" msprop:rel_Generator_UserRelationName="SeverityLevelEnumException" msprop:rel_Generator_RelationVarName="relationSeverityLevelEnumException" msprop:rel_Generator_UserChildTable="Exceptions" msprop:rel_Generator_UserParentTable="SeverityLevelEnum" msprop:rel_Generator_ParentPropName="SeverityLevelEnumRow" msprop:rel_Generator_ChildPropName="GetExceptionsRows">
+      <xs:selector xpath=".//mstns:Exceptions" />
+      <xs:field xpath="mstns:SeverityLevel" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

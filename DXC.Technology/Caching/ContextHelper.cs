@@ -283,6 +283,18 @@ namespace DXC.Technology.Caching
         {
             return _httpContext.RequestServices.GetRequiredService<ITranslationProvider>();
         }
+        public static string GetExecutingUseCaseDescription()
+        {
+            if (ThreadContext.Value != null)
+                return ThreadContext.Value.GetSessionValue("__ExecutingUseCaseDescription");
+            return null;
+        }
+        public static void SetExecutingUseCaseDescription(string executingUseCaseDescription)
+        {
+            if (ThreadContext.Value != null)
+                ThreadContext.Value.SetSessionValue("__ExecutingUseCaseDescription", executingUseCaseDescription);
+        }
+
 
         //    public static bool HasContext()
         //    {

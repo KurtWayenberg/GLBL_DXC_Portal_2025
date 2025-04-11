@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,6 +35,14 @@ namespace DXC.Technology.Data
                 stringWriter.Write("|");
             }
             return stringWriter.ToString();
+        }
+        public static bool IsTrackingField(string columnName)
+        {
+            return false;
+        }
+        public static bool IsVersionNumberField(string columnName)
+        {
+            return false;
         }
 
         #endregion
