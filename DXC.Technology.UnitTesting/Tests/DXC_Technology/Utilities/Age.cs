@@ -33,9 +33,9 @@ namespace DXC.Technology.Utilities.Tests
             Age age = new Age(birthday);
 
             // Assert
-            TechnologyAssertHelper.IsTrue(age.Years == today.Year - birthday.Year, "Years should be correctly calculated.");
-            TechnologyAssertHelper.IsTrue(age.Months >= 0 && age.Months <= 11, "Months should be within valid range.");
-            TechnologyAssertHelper.IsTrue(age.Days >= 0 && age.Days <= 31, "Days should be within valid range.");
+            this.IsTrue(age.Years == today.Year - birthday.Year, "Years should be correctly calculated.");
+            this.IsTrue(age.Months >= 0 && age.Months <= 11, "Months should be within valid range.");
+            this.IsTrue(age.Days >= 0 && age.Days <= 31, "Days should be within valid range.");
         }
 
         /// <summary>
@@ -52,9 +52,9 @@ namespace DXC.Technology.Utilities.Tests
             Age age = new Age(birthday, comparisonDate);
 
             // Assert
-            TechnologyAssertHelper.IsTrue(age.Years == 23, "Years should be correctly calculated.");
-            TechnologyAssertHelper.IsTrue(age.Months == 9, "Months should be correctly calculated.");
-            TechnologyAssertHelper.IsTrue(age.Days == 0, "Days should be correctly calculated.");
+            this.IsTrue(age.Years == 23, "Years should be correctly calculated.");
+            this.IsTrue(age.Months == 9, "Months should be correctly calculated.");
+            this.IsTrue(age.Days == 0, "Days should be correctly calculated.");
         }
 
         /// <summary>
@@ -72,9 +72,9 @@ namespace DXC.Technology.Utilities.Tests
             age.Count(birthday);
 
             // Assert
-            TechnologyAssertHelper.IsTrue(age.Years == today.Year - birthday.Year, "Years should be correctly calculated.");
-            TechnologyAssertHelper.IsTrue(age.Months >= 0 && age.Months <= 11, "Months should be within valid range.");
-            TechnologyAssertHelper.IsTrue(age.Days >= 0 && age.Days <= 31, "Days should be within valid range.");
+            this.IsTrue(age.Years == today.Year - birthday.Year, "Years should be correctly calculated.");
+            this.IsTrue(age.Months >= 0 && age.Months <= 11, "Months should be within valid range.");
+            this.IsTrue(age.Days >= 0 && age.Days <= 31, "Days should be within valid range.");
         }
 
         /// <summary>
@@ -92,9 +92,9 @@ namespace DXC.Technology.Utilities.Tests
             age.Count(birthday, comparisonDate);
 
             // Assert
-            TechnologyAssertHelper.IsTrue(age.Years == 23, "Years should be correctly calculated.");
-            TechnologyAssertHelper.IsTrue(age.Months == 9, "Months should be correctly calculated.");
-            TechnologyAssertHelper.IsTrue(age.Days == 0, "Days should be correctly calculated.");
+            this.IsTrue(age.Years == 23, "Years should be correctly calculated.");
+            this.IsTrue(age.Months == 9, "Months should be correctly calculated.");
+            this.IsTrue(age.Days == 0, "Days should be correctly calculated.");
         }
 
         /// <summary>

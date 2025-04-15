@@ -1,4 +1,5 @@
 using DXC.Technology.Publishers;
+using DXC.Technology.UnitTesting.TestStatistic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,8 @@ namespace DXC.Technology.UnitTesting.Helpers
         public static TestStatisticsHelper Current => _instance.Value;
 
         public List<UnitTestResult> UnitTestResults { get; set; } = new List<UnitTestResult>();
-
+        public List<UnitTestSummaryResult> UnitTestSummaryResults { get; set; } = new List<UnitTestSummaryResult>();
+        
         private TestStatisticsHelper() { }
 
         public UnitTestResult GetStatisticRecordCreateOneIfNull(string testType, string testClass, string testMethod)
@@ -29,12 +31,6 @@ namespace DXC.Technology.UnitTesting.Helpers
                         TestType = testType,
                         TestClass = testClass,
                         TestMethod = testMethod,
-                        TotalTestTypeCount = 0,
-                        TotalTestClassCount = 0,
-                        TotalTestMethodCount = 0,
-                        TotalTestMethodPassedCount = 0,
-                        TotalTestMethodFailedCount = 0,
-                        TotalTestMethodTimeoutCount = 0,
                         TotalAssertsCount = 0,
                         TotalAssertsFailedCount = 0,
                         AreEqualCount = 0,
@@ -71,5 +67,100 @@ namespace DXC.Technology.UnitTesting.Helpers
             }
         }
 
+        public void LogAssertCall(string testType, string testClass, string testMethod, AssertCallTypeEnum assertCallType, bool isFailure)
+        {
+            lock (_lock)
+            {
+                var record = GetStatisticRecordCreateOneIfNull(testType, testClass, testMethod);
+                record.LogAssertCall(assertCallType, isFailure);
+            }
+        }
+
+        public void SummarizeUnitTestResultsInUnitTestSummaryResults()
+        {
+            lock (_lock)
+            {
+                UnitTestSummaryResults.Clear();
+
+                var groupedResults = UnitTestResults
+                    .GroupBy(r => new { r.TestType, r.TestClass })
+                    .Select(g => new UnitTestSummaryResult
+                    {
+                        TestType = g.Key.TestType,
+                        TestClass = g.Key.TestClass,
+                        TotalTestTypeCount = g.Count(),
+                        TotalTestClassCount = g.Count(),
+                        TotalTestMethodCount = g.Select(r => r.TestMethod).Distinct().Count(),
+                        TotalTestMethodPassedCount = g.Count(r => r.OverallStatus == UnitTestOutcome.Passed),
+                        TotalTestMethodFailedCount = g.Count(r => r.OverallStatus == UnitTestOutcome.Failed),
+                        TotalTestMethodTimeoutCount = g.Count(r => r.OverallStatus == UnitTestOutcome.Timeout),
+                        TotalAssertsCount = g.Sum(r => r.TotalAssertsCount),
+                        TotalAssertsFailedCount = g.Sum(r => r.TotalAssertsFailedCount),
+                        OverallStatus = g.All(r => r.OverallStatus == UnitTestOutcome.Passed) ? UnitTestOutcome.Passed : UnitTestOutcome.Failed,
+                        TotalDurationInMilliSeconds = g.Sum(r => r.DurationInMilliSeconds)
+                    }).ToList();
+
+                UnitTestSummaryResults.AddRange(groupedResults);
+
+                var overallSummary = new UnitTestSummaryResult
+                {
+                    TestType = "Overall",
+                    TestClass = "All",
+                    TotalTestTypeCount = UnitTestResults.Select(r => r.TestType).Distinct().Count(),
+                    TotalTestClassCount = UnitTestResults.Select(r => r.TestClass).Distinct().Count(),
+                    TotalTestMethodCount = UnitTestResults.Select(r => r.TestMethod).Distinct().Count(),
+                    TotalTestMethodPassedCount = UnitTestResults.Count(r => r.OverallStatus == UnitTestOutcome.Passed),
+                    TotalTestMethodFailedCount = UnitTestResults.Count(r => r.OverallStatus == UnitTestOutcome.Failed),
+                    TotalTestMethodTimeoutCount = UnitTestResults.Count(r => r.OverallStatus == UnitTestOutcome.Timeout),
+                    TotalAssertsCount = UnitTestResults.Sum(r => r.TotalAssertsCount),
+                    TotalAssertsFailedCount = UnitTestResults.Sum(r => r.TotalAssertsFailedCount),
+                    OverallStatus = UnitTestResults.All(r => r.OverallStatus == UnitTestOutcome.Passed) ? UnitTestOutcome.Passed : UnitTestOutcome.Failed,
+                    TotalDurationInMilliSeconds = UnitTestResults.Sum(r => r.DurationInMilliSeconds)
+                };
+
+                UnitTestSummaryResults.Add(overallSummary);
+
+                var testTypeSummaries = UnitTestResults
+                    .GroupBy(r => r.TestType)
+                    .Select(g => new UnitTestSummaryResult
+                    {
+                        TestType = g.Key,
+                        TestClass = "All",
+                        TotalTestTypeCount = g.Count(),
+                        TotalTestClassCount = g.Select(r => r.TestClass).Distinct().Count(),
+                        TotalTestMethodCount = g.Select(r => r.TestMethod).Distinct().Count(),
+                        TotalTestMethodPassedCount = g.Count(r => r.OverallStatus == UnitTestOutcome.Passed),
+                        TotalTestMethodFailedCount = g.Count(r => r.OverallStatus == UnitTestOutcome.Failed),
+                        TotalTestMethodTimeoutCount = g.Count(r => r.OverallStatus == UnitTestOutcome.Timeout),
+                        TotalAssertsCount = g.Sum(r => r.TotalAssertsCount),
+                        TotalAssertsFailedCount = g.Sum(r => r.TotalAssertsFailedCount),
+                        OverallStatus = g.All(r => r.OverallStatus == UnitTestOutcome.Passed) ? UnitTestOutcome.Passed : UnitTestOutcome.Failed,
+                        TotalDurationInMilliSeconds = g.Sum(r => r.DurationInMilliSeconds)
+                    }).ToList();
+
+                UnitTestSummaryResults.AddRange(testTypeSummaries);
+            }
+        }
+
+        public IEnumerable<UnitTestSummaryResult> GetSummaryResults()
+        {
+            lock (_lock)
+            {
+                return UnitTestSummaryResults;
+            }
+        }
+
+        internal void ReportTestOutCome(TestContext testContext)
+        {
+            lock (_lock)
+            {
+                var record = GetStatisticRecordCreateOneIfNull(
+                    TestContextPropertiesHelper.GetUnitTestType(testContext).ToString(),
+                    TestContextPropertiesHelper.GetTestClassName(testContext),
+                    TestContextPropertiesHelper.GetMethodName(testContext)
+                );
+                record.LogEnd(testContext.CurrentTestOutcome, TestContextPropertiesHelper.GetComment(testContext));
+            }
+        }
     }
 }

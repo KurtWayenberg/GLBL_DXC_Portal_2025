@@ -7,7 +7,6 @@ namespace DXC.Technology.UnitTesting.Helpers
     {
         public string TestType { get; set; }
         public string TestClass { get; set; }
-        public string TestMethod { get; set; }
         public int TotalTestTypeCount { get; set; }
         public int TotalTestClassCount { get; set; }
         public int TotalTestMethodCount { get; set; }
@@ -191,6 +190,7 @@ namespace DXC.Technology.UnitTesting.Helpers
         public double DurationInMilliSeconds { get; set; }
 
         public UnitTestOutcome OverallStatus { get; set; }
+        public string Comment { get; set; } = null!;
 
         public void LogStart()
         {
@@ -210,6 +210,14 @@ namespace DXC.Technology.UnitTesting.Helpers
         {
             this.EndDateTime = DateTime.Now;
             this.OverallStatus = pUnitTestOutcome;
+            TimeSpan lts = this.EndDateTime.Subtract(this.StartDateTime);
+            this.DurationInMilliSeconds = lts.TotalMilliseconds;
+        }
+        public void LogEnd(UnitTestOutcome pUnitTestOutcome, string comment)
+        {
+            this.EndDateTime = DateTime.Now;
+            this.OverallStatus = pUnitTestOutcome;
+            this.Comment = comment;
             TimeSpan lts = this.EndDateTime.Subtract(this.StartDateTime);
             this.DurationInMilliSeconds = lts.TotalMilliseconds;
         }
@@ -258,98 +266,98 @@ namespace DXC.Technology.UnitTesting.Helpers
 
         private readonly object _lock = new object();
 
-        public void LogAssertCall(AssertCallTypeEnum pAssertCallType)
+        public void LogAssertCall(AssertCallTypeEnum pAssertCallType, bool isFailure)
         {
             lock (_lock)
             {
                 this.TotalAssertsCount++;
-                switch (pAssertCallType)
+                if (!isFailure)
                 {
-                    case AssertCallTypeEnum.AreEqual:
-                        this.AreEqualCount++;
-                        break;
-                    case AssertCallTypeEnum.AreNotEqual:
-                        this.AreNotEqualCount++;
-                        break;
-                    case AssertCallTypeEnum.AreNotSame:
-                        this.AreNotSameCount++;
-                        break;
-                    case AssertCallTypeEnum.AreSame:
-                        this.AreSameCount++;
-                        break;
-                    case AssertCallTypeEnum.Fail:
-                        this.FailCount++;
-                        break;
-                    case AssertCallTypeEnum.Inconclusive:
-                        this.InconclusiveCount++;
-                        break;
-                    case AssertCallTypeEnum.IsFalse:
-                        this.IsFalseCount++;
-                        break;
-                    case AssertCallTypeEnum.IsInstanceOfType:
-                        this.IsInstanceOfTypeCount++;
-                        break;
-                    case AssertCallTypeEnum.IsNotInstanceOfType:
-                        this.IsNotInstanceOfTypeCount++;
-                        break;
-                    case AssertCallTypeEnum.IsNotNull:
-                        this.IsNotNullCount++;
-                        break;
-                    case AssertCallTypeEnum.IsNull:
-                        this.IsNullCount++;
-                        break;
-                    case AssertCallTypeEnum.IsTrue:
-                        this.IsTrueCount++;
-                        break;
-                    case AssertCallTypeEnum.ExceptionAssert:
-                        this.ExceptionAssertCount++;
-                        break;
+                    switch (pAssertCallType)
+                    {
+                        case AssertCallTypeEnum.AreEqual:
+                            this.AreEqualCount++;
+                            break;
+                        case AssertCallTypeEnum.AreNotEqual:
+                            this.AreNotEqualCount++;
+                            break;
+                        case AssertCallTypeEnum.AreNotSame:
+                            this.AreNotSameCount++;
+                            break;
+                        case AssertCallTypeEnum.AreSame:
+                            this.AreSameCount++;
+                            break;
+                        case AssertCallTypeEnum.Fail:
+                            this.FailCount++;
+                            break;
+                        case AssertCallTypeEnum.Inconclusive:
+                            this.InconclusiveCount++;
+                            break;
+                        case AssertCallTypeEnum.IsFalse:
+                            this.IsFalseCount++;
+                            break;
+                        case AssertCallTypeEnum.IsInstanceOfType:
+                            this.IsInstanceOfTypeCount++;
+                            break;
+                        case AssertCallTypeEnum.IsNotInstanceOfType:
+                            this.IsNotInstanceOfTypeCount++;
+                            break;
+                        case AssertCallTypeEnum.IsNotNull:
+                            this.IsNotNullCount++;
+                            break;
+                        case AssertCallTypeEnum.IsNull:
+                            this.IsNullCount++;
+                            break;
+                        case AssertCallTypeEnum.IsTrue:
+                            this.IsTrueCount++;
+                            break;
+                        case AssertCallTypeEnum.ExceptionAssert:
+                            this.ExceptionAssertCount++;
+                            break;
+                    }
                 }
-            }
-        }
-        public void LogAssertCallFailure(AssertCallTypeEnum pAssertCallType)
-        {
-            lock (_lock)
-            {
-                this.TotalAssertsFailedCount++;
-                switch (pAssertCallType)
+                else
                 {
-                    case AssertCallTypeEnum.AreEqual:
-                        this.AreEqualFailedCount++;
-                        break;
-                    case AssertCallTypeEnum.AreNotEqual:
-                        this.AreNotEqualFailedCount++;
-                        break;
-                    case AssertCallTypeEnum.AreNotSame:
-                        this.AreNotSameFailedCount++;
-                        break;
-                    case AssertCallTypeEnum.AreSame:
-                        this.AreSameFailedCount++;
-                        break;
-                    case AssertCallTypeEnum.Fail:
-                        this.FailFailedCount++;
-                        break;
-                    case AssertCallTypeEnum.IsFalse:
-                        this.IsFalseFailedCount++;
-                        break;
-                    case AssertCallTypeEnum.IsInstanceOfType:
-                        this.IsInstanceOfTypeFailedCount++;
-                        break;
-                    case AssertCallTypeEnum.IsNotInstanceOfType:
-                        this.IsNotInstanceOfTypeFailedCount++;
-                        break;
-                    case AssertCallTypeEnum.IsNotNull:
-                        this.IsNotNullFailedCount++;
-                        break;
-                    case AssertCallTypeEnum.IsNull:
-                        this.IsNullFailedCount++;
-                        break;
-                    case AssertCallTypeEnum.IsTrue:
-                        this.IsTrueFailedCount++;
-                        break;
-                    case AssertCallTypeEnum.ExceptionAssert:
-                        this.ExceptionAssertCount++;
-                        break;
+                    this.TotalAssertsFailedCount++;
+                    switch (pAssertCallType)
+                    {
+                        case AssertCallTypeEnum.AreEqual:
+                            this.AreEqualFailedCount++;
+                            break;
+                        case AssertCallTypeEnum.AreNotEqual:
+                            this.AreNotEqualFailedCount++;
+                            break;
+                        case AssertCallTypeEnum.AreNotSame:
+                            this.AreNotSameFailedCount++;
+                            break;
+                        case AssertCallTypeEnum.AreSame:
+                            this.AreSameFailedCount++;
+                            break;
+                        case AssertCallTypeEnum.Fail:
+                            this.FailFailedCount++;
+                            break;
+                        case AssertCallTypeEnum.IsFalse:
+                            this.IsFalseFailedCount++;
+                            break;
+                        case AssertCallTypeEnum.IsInstanceOfType:
+                            this.IsInstanceOfTypeFailedCount++;
+                            break;
+                        case AssertCallTypeEnum.IsNotInstanceOfType:
+                            this.IsNotInstanceOfTypeFailedCount++;
+                            break;
+                        case AssertCallTypeEnum.IsNotNull:
+                            this.IsNotNullFailedCount++;
+                            break;
+                        case AssertCallTypeEnum.IsNull:
+                            this.IsNullFailedCount++;
+                            break;
+                        case AssertCallTypeEnum.IsTrue:
+                            this.IsTrueFailedCount++;
+                            break;
+                        case AssertCallTypeEnum.ExceptionAssert:
+                            this.ExceptionAssertCount++;
+                            break;
+                    }
                 }
             }
         }
@@ -519,6 +527,9 @@ namespace DXC.Technology.UnitTesting.Helpers
 
                 psw.Write(DXC.Technology.Utilities.String.FormatString((this.DurationInMilliSeconds / 1000).ToString("0.00", DXC.Technology.Utilities.StringFormatProvider.Default),
                                                     8, DXC.Technology.Utilities.String.FormatStringAlignmentEnum.Right, " "));
+
+                psw.Write(" ");
+                psw.Write(this.Comment);
             }
             psw.WriteLine();
 

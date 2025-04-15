@@ -29,12 +29,12 @@ namespace DXC.Technology.UnitTesting.Helpers
     {
         private static void LogAssertCall(AssertCallTypeEnum pAssertCallType, string pComment)
         {
-            TechnologyUnitTestHelper.LogAssertCall(pAssertCallType, pComment);
+            //TestStatisticsHelper.LogAssertCall(pAssertCallType, pComment);
         }
 
         private static void LogAssertCallFailure(Exception ex, AssertCallTypeEnum pAssertCallType, string pComment)
         {
-            TechnologyUnitTestHelper.LogAssertCallFailure(ex, pAssertCallType, pComment);
+            //TestStatisticsHelper.LogAssertCallFailure(ex, pAssertCallType, pComment);
         }
 
         // Summary:
