@@ -1,0 +1,212 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F64357-B952-4653-9FF3-E381EF1E3CA9}|..\\DXC.Technology.UnitTesting\\DXC.Technology.UnitTesting.csproj|c:\\projects\\glbl_dxc_portal_2025\\dxc.technology.unittesting\\helpers\\teststatisticshelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F64357-B952-4653-9FF3-E381EF1E3CA9}|..\\DXC.Technology.UnitTesting\\DXC.Technology.UnitTesting.csproj|c:\\projects\\glbl_dxc_portal_2025\\dxc.technology.unittesting\\teststatistic\\unittestresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F64357-B952-4653-9FF3-E381EF1E3CA9}|..\\DXC.Technology.UnitTesting\\DXC.Technology.UnitTesting.csproj|c:\\projects\\glbl_dxc_portal_2025\\dxc.technology.unittesting\\teststatistic\\teststatisticshelperold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F64357-B952-4653-9FF3-E381EF1E3CA9}|..\\DXC.Technology.UnitTesting\\DXC.Technology.UnitTesting.csproj|c:\\projects\\glbl_dxc_portal_2025\\dxc.technology.unittesting\\teststatistic\\testcontextpropertieshelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F64357-B952-4653-9FF3-E381EF1E3CA9}|..\\DXC.Technology.UnitTesting\\DXC.Technology.UnitTesting.csproj|c:\\projects\\glbl_dxc_portal_2025\\dxc.technology.unittesting\\teststatistic\\threadstatistic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F64357-B952-4653-9FF3-E381EF1E3CA9}|..\\DXC.Technology.UnitTesting\\DXC.Technology.UnitTesting.csproj|c:\\projects\\glbl_dxc_portal_2025\\dxc.technology.unittesting\\technologytestsetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 270,
+          "SelectedChildIndex": 29,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TestContextPropertiesHelper.cs",
+              "DocumentMoniker": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\TestStatistic\\TestContextPropertiesHelper.cs",
+              "RelativeDocumentMoniker": "..\\DXC.Technology.UnitTesting\\TestStatistic\\TestContextPropertiesHelper.cs",
+              "ToolTip": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\TestStatistic\\TestContextPropertiesHelper.cs",
+              "RelativeToolTip": "..\\DXC.Technology.UnitTesting\\TestStatistic\\TestContextPropertiesHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:44:43.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TestStatisticsHelperOld.cs",
+              "DocumentMoniker": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\TestStatistic\\TestStatisticsHelperOld.cs",
+              "RelativeDocumentMoniker": "..\\DXC.Technology.UnitTesting\\TestStatistic\\TestStatisticsHelperOld.cs",
+              "ToolTip": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\TestStatistic\\TestStatisticsHelperOld.cs",
+              "RelativeToolTip": "..\\DXC.Technology.UnitTesting\\TestStatistic\\TestStatisticsHelperOld.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:44:42.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ThreadStatistic.cs",
+              "DocumentMoniker": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\TestStatistic\\ThreadStatistic.cs",
+              "RelativeDocumentMoniker": "..\\DXC.Technology.UnitTesting\\TestStatistic\\ThreadStatistic.cs",
+              "ToolTip": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\TestStatistic\\ThreadStatistic.cs",
+              "RelativeToolTip": "..\\DXC.Technology.UnitTesting\\TestStatistic\\ThreadStatistic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T15:44:38.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TechnologyTestSetup.cs",
+              "DocumentMoniker": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\TechnologyTestSetup.cs",
+              "RelativeDocumentMoniker": "..\\DXC.Technology.UnitTesting\\TechnologyTestSetup.cs",
+              "ToolTip": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\TechnologyTestSetup.cs",
+              "RelativeToolTip": "..\\DXC.Technology.UnitTesting\\TechnologyTestSetup.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAtwBoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T13:28:41.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitTestResult.cs",
+              "DocumentMoniker": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\TestStatistic\\UnitTestResult.cs",
+              "RelativeDocumentMoniker": "..\\DXC.Technology.UnitTesting\\TestStatistic\\UnitTestResult.cs",
+              "ToolTip": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\TestStatistic\\UnitTestResult.cs",
+              "RelativeToolTip": "..\\DXC.Technology.UnitTesting\\TestStatistic\\UnitTestResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T13:17:38.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:151:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:152:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:153:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:150:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{605322a2-17ae-43f4-b60f-766556e46c87}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:145:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:146:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:148:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:149:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:141:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestStatisticsHelper.cs",
+              "DocumentMoniker": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\Helpers\\TestStatisticsHelper.cs",
+              "RelativeDocumentMoniker": "..\\DXC.Technology.UnitTesting\\Helpers\\TestStatisticsHelper.cs",
+              "ToolTip": "C:\\Projects\\GLBL_DXC_Portal_2025\\DXC.Technology.UnitTesting\\Helpers\\TestStatisticsHelper.cs",
+              "RelativeToolTip": "..\\DXC.Technology.UnitTesting\\Helpers\\TestStatisticsHelper.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAAAMYAAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T12:56:16.363Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

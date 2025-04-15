@@ -1,0 +1,12 @@
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\bin\Debug\net8.0\.msCoverageSourceRootsMapping_DXC.Technology.UnitTesting
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\bin\Debug\net8.0\.msCoverageExtensionSourceRootsMapping_DXC.Technology.UnitTesting
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\obj\Debug\net8.0\DXC.Technology.UnitTesting.csproj.AssemblyReference.cache
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\obj\Debug\net8.0\DXC.Technology.UnitTesting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\obj\Debug\net8.0\DXC.Technology.UnitTesting.AssemblyInfoInputs.cache
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\obj\Debug\net8.0\DXC.Technology.UnitTesting.AssemblyInfo.cs
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\obj\Debug\net8.0\DXC.Technology.UnitTesting.csproj.CoreCompileInputs.cache
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\obj\Debug\net8.0\DXC.Technology.UnitTesting.gentestingplatformentrypointinputcache.cache
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\obj\Debug\net8.0\DXC.Technology.UnitTesting.genautoregisteredextensionsinputcache.cache
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\obj\Debug\net8.0\AutoRegisteredExtensions.cs
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\obj\Debug\net8.0\TestPlatformEntryPoint.cs
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology.UnitTesting\obj\Debug\net8.0\DXC.Technology.UnitTesting.sourcelink.json

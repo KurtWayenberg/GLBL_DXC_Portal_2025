@@ -1,4 +1,5 @@
 ﻿using DXC.Technology.Configuration;
+using DXC.Technology.UnitTesting.Helpers;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,12 @@ namespace DXC.Technology.UnitTesting
                 .Build();
 
             AppSettingsHelper.Initialize(config);
+        }
+
+        [AssemblyCleanup]
+        public static void Cleanup()
+        {
+            TestStatisticsHelper.Current.ReportResults();
         }
 
         [TestMethod]

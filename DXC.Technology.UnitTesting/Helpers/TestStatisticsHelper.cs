@@ -3,7 +3,6 @@ using DXC.Technology.UnitTesting.TestStatistic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static DXC.Technology.UnitTesting.Helpers.UnitTestOverviewDataSet;
 
 namespace DXC.Technology.UnitTesting.Helpers
 {
@@ -16,7 +15,7 @@ namespace DXC.Technology.UnitTesting.Helpers
 
         public List<UnitTestResult> UnitTestResults { get; set; } = new List<UnitTestResult>();
         public List<UnitTestSummaryResult> UnitTestSummaryResults { get; set; } = new List<UnitTestSummaryResult>();
-        
+
         private TestStatisticsHelper() { }
 
         public UnitTestResult GetStatisticRecordCreateOneIfNull(string testType, string testClass, string testMethod)
@@ -161,6 +160,84 @@ namespace DXC.Technology.UnitTesting.Helpers
                 );
                 record.LogEnd(testContext.CurrentTestOutcome, TestContextPropertiesHelper.GetComment(testContext));
             }
+        }
+
+        internal void ReportResults()
+        {
+            string unitTestingRoot = DXC.Technology.Configuration.AppSettingsHelper.GetAsString("TechnologySettings:UnitTestingRoot");
+            string timestamp = DXC.Technology.Utilities.Date.ToYYYYMMDDHHMMSSFFFString(DateTime.Now);
+            string currentUnitTestResults = $"{unitTestingRoot}/Files/DetailUnitTestResults{timestamp}.json";
+            string currentUnitTestSummaryResults = $"{unitTestingRoot}/Files/DetailUnitTestSummaryResults{timestamp}.json";
+            string currentUnitTestUserReport = $"{unitTestingRoot}/Files/UserReport{timestamp}.json";
+
+            //First refresh the current results
+            TestStatisticsHelper.Current.SummarizeUnitTestResultsInUnitTestSummaryResults();
+
+            //Then Write the current results to the file
+            {
+                //Serialize the UnitTestResults and UnitTestSummaryResults to JSON
+                string unitTestResultsJson = Newtonsoft.Json.JsonConvert.SerializeObject(UnitTestResults);
+                //Write the file to currentUnitTestResults     
+                System.IO.File.WriteAllText(currentUnitTestResults, unitTestResultsJson);
+                //Serialize the UnitTestSummaryResults to JSON
+                string unitTestSummaryResultsJson = Newtonsoft.Json.JsonConvert.SerializeObject(UnitTestSummaryResults);
+                //Write the file to currentUnitTestSummaryResults
+                System.IO.File.WriteAllText(currentUnitTestSummaryResults, unitTestSummaryResultsJson);
+
+
+
+            }
+            string totalsUnitTestResults = unitTestingRoot + "TotalsUnitTestResults.json";
+            string totalsUnitTestSummaryResults = unitTestingRoot + "TotalsUnitTestSummaryResults.json";
+
+            //First check if the totalsUnitTestResults file exists and if it does read it
+            if (System.IO.File.Exists(totalsUnitTestResults))
+            {
+                string unitTestResultsJson = System.IO.File.ReadAllText(totalsUnitTestResults);
+                // If the file is empty, set it to an empty JSON array
+                if (string.IsNullOrEmpty(unitTestResultsJson)) unitTestResultsJson = "[]";
+                var previousUnitTestResults = Newtonsoft.Json.JsonConvert.DeserializeObject<List<UnitTestResult>>(unitTestResultsJson)!;
+                //Merge the previous results with the current results. Records are updated based on the TestType, TestClass and TestMethod
+                foreach (var previousRecord in previousUnitTestResults)
+                {
+                    var currentRecord = UnitTestResults.FirstOrDefault(r => r.TestType == previousRecord.TestType && r.TestClass == previousRecord.TestClass && r.TestMethod == previousRecord.TestMethod);
+                    if (currentRecord == null)
+                    {
+                        UnitTestResults.Add(previousRecord);
+                    }
+                }
+            }
+
+            TestStatisticsHelper.Current.SummarizeUnitTestResultsInUnitTestSummaryResults();
+
+            //Write the results to the file
+            {
+                //Serialize the UnitTestResults and UnitTestSummaryResults to JSON
+                string unitTestResultsJson = Newtonsoft.Json.JsonConvert.SerializeObject(UnitTestResults);
+                //Write the file to totalsUnitTestResults     
+                System.IO.File.WriteAllText(totalsUnitTestResults, unitTestResultsJson);
+                //Serialize the UnitTestSummaryResults to JSON
+                string unitTestSummaryResultsJson = Newtonsoft.Json.JsonConvert.SerializeObject(UnitTestSummaryResults);
+                //Write the file to totalsUnitTestSummaryResults
+                System.IO.File.WriteAllText(totalsUnitTestSummaryResults, unitTestSummaryResultsJson);
+            }
+
+            //    UnitTestResults
+            //           UnitTestSummaryResults 
+
+            //TestStatisticsHelper.Current.UpdateSummaryResultFile();
+            //    UnitTestOverviewDataSet dsTotals = new UnitTestOverviewDataSet();
+            //    string totalsXMLFile = unitTestingRoot + "Totals.xml";
+            //    if (System.IO.File.Exists(totalsXMLFile))
+            //        dsTotals.ReadXml(totalsXMLFile);
+            //    UnitTestOverview.UpdateTotals(dsTotals);
+            //    dsTotals.WriteTotalResults();
+            //    if (System.IO.File.Exists(totalsXMLFile))
+            //        System.IO.File.Delete(totalsXMLFile);
+            //    dsTotals.WriteXml(totalsXMLFile);
+
+            //    TestStatisticsHelper.Current.GetSummaryResults()
+
         }
     }
 }

@@ -36,20 +36,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Helpers\UnitTestOverviewDataSet.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>UnitTestOverviewDataSet.xsd</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Helpers\UnitTestOverviewDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>UnitTestOverviewDataSet.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

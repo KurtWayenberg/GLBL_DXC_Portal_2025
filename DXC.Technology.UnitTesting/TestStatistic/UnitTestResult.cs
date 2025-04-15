@@ -1,5 +1,4 @@
 using System;
-using static DXC.Technology.UnitTesting.Helpers.UnitTestOverviewDataSet;
 
 namespace DXC.Technology.UnitTesting.Helpers
 {
@@ -535,7 +534,8 @@ namespace DXC.Technology.UnitTesting.Helpers
 
         }
 
-
-
+        internal void Merge(UnitTestResult previousRecord)
+        {
+        }
     }
 }

@@ -1,0 +1,13 @@
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\bin\Debug\net8.0\DXC.Technology.deps.json
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\bin\Debug\net8.0\DXC.Technology.dll
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\bin\Debug\net8.0\DXC.Technology.pdb
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\obj\Debug\net8.0\DXC.Technology.csproj.AssemblyReference.cache
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\obj\Debug\net8.0\DXC.Technology.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\obj\Debug\net8.0\DXC.Technology.AssemblyInfoInputs.cache
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\obj\Debug\net8.0\DXC.Technology.AssemblyInfo.cs
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\obj\Debug\net8.0\DXC.Technology.csproj.CoreCompileInputs.cache
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\obj\Debug\net8.0\DXC.Technology.sourcelink.json
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\obj\Debug\net8.0\DXC.Technology.dll
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\obj\Debug\net8.0\refint\DXC.Technology.dll
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\obj\Debug\net8.0\DXC.Technology.pdb
+C:\Projects\GLBL_DXC_Portal_2025\DXC.Technology\obj\Debug\net8.0\ref\DXC.Technology.dll
